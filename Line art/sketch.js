@@ -31,7 +31,7 @@ function draw() {
     rChange = -rChange;
   }
   if (greenAmount > 255 || greenAmount < 0){
-    gChange = -g  Change;
+    gChange = -gChange;
   }
   if (blueAmount > 255 || blueAmount < 0){
     bChange = -bChange;
