@@ -1,9 +1,7 @@
-// Project Title
-// Your Name
+// RGB Circle madness
+// Anurag Sakharkar
 // Date
-//
-// Extra for Experts:
-// - describe what you did to take this project "above and beyond"
+
 
 let redAmount = 0;
 let blueAmount = 0;
