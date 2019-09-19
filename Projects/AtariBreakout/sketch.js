@@ -34,7 +34,7 @@ var canvas = document.getElementById("game-canvas");
       }
 
 
-       // function to draw the ball 
+       // function to draw the ball
       function drawBall() {
         ctx.beginPath();
         ctx.arc(x, y, ballR, 0, Math.PI * 2);
@@ -110,7 +110,7 @@ var canvas = document.getElementById("game-canvas");
             document.location.reload();
           }
         }
-        // when key is pressed 
+        // when key is pressed
         function keyDown(e) {
           if (e.keyCode == 39) {
             rightKey = true;
