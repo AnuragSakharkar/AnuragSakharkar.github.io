@@ -11,7 +11,7 @@ let dx = 10;
 let dy = 10;
 let radius;
 let rectsize;
-let mode = "rectangle";
+let state = "menu";
 
 
 function setup() 
@@ -31,19 +31,29 @@ function draw()
 {
 
   background(255);
-  x += dx;
-  y += dy;
 
 
-  if (mode === "circle") 
+  if (state === "menu") 
   {
-    displayCircle()
+  showMenu();
+  checkIfButtonClicked();
+  }
+    
+
+
+  else if (state === "circle") 
+  {
+    displayCircle();
+    x += dx;
+    y += dy;
   }
 
 
-  else if (mode === "rectangle")
+  else if (state === "rectangle")
   {
     displayRectangle(); 
+    x += dx;
+    y += dy;
   }
 
 }
@@ -85,7 +95,36 @@ function displayRectangle()
 
   fill(0);
   rect(x, y, rectsize, rectsize);
-  print(x);
-  print(y);
+
+}
+
+
+function showMenu() {
+
+  rectMode(CENTER);
+  rect(width/2, height/2,-100, 200, 75)
+  textAlign(CENTER, CENTER);
+  textSize(50);
+  text("RECTANGLE", width/2, height/2 - 100)
+
+
+  rect(width/2, height/2,+100, 200, 75)
+  textAlign(CENTER, CENTER);
+  textSize(50);
+  text("RECTANGLE", width/2, height/2 + 100)
+
+}
+
+function checkIfButtonClicked() {
+  if (mouseIsPressed) {
+    if (mouseX > width/2 - 200 && mouseX < width/2 + 200 && mouseY > height/2 - 175 && mouseY < height/2 + 75) {
+      state = "rectangle";
+    }
+    if (mouseX > width/2 - 200 && mouseX < width/2 + 200 && mouseY > height/2 - 75 && mouseY < height/2 - 25) {
+      state = "rectangle";
+    }
+  }
+
+
 
 }
